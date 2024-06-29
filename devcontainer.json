@@ -1,0 +1,15 @@
+{
+    "name": "Python 3",
+    "dockerFile": "Dockerfile",
+    "postCreateCommand": "pip install -r requirements.txt",
+    "settings": {
+      "terminal.integrated.defaultProfile.linux": "bash"
+    },
+    "extensions": [
+      "ms-python.python",
+      "ms-python.vscode-pylance"
+    ],
+    "forwardPorts": [5432],
+    "remoteUser": "vscode"
+  }
+  
