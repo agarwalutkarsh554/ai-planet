@@ -1,8 +1,4 @@
-import metaflow
-
 from metaflow import FlowSpec, step
-metaflow.disable_plugin('kubernetes')
-metaflow.disable_plugin('batch')
 
 class AirbnbETLFlow(FlowSpec):
 
@@ -15,11 +11,11 @@ class AirbnbETLFlow(FlowSpec):
     def data_ingestion(self):
         import data_ingestion
         print("Data ingestion completed.")
-        self.next(self.etl_pipeline)
+        self.next(self.transformation)
 
     @step
-    def etl_pipeline(self):
-        import etl_pipeline
+    def transformation(self):
+        import transformation
         print("ETL pipeline completed.")
         self.next(self.end)
 
